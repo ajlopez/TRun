@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleTaskTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TRun.Core\TRun.Core.csproj">
