@@ -1,21 +1,21 @@
 ﻿namespace TRun.Core.Tests
 {
     using System;
+    using System.Text;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class SimpleTaskTests
+    public class RunnerTests
     {
         [TestMethod]
-        public void RunSimpleTask()
+        public void RunSimpleTaskWithName()
         {
             SimpleTask task = new SimpleTask("Simple");
+            Runner runner = new Runner(new ITask[] { task });
 
-            Assert.AreEqual("Simple", task.Name);
-            Assert.IsTrue(task.Run());
+            Assert.IsTrue(runner.Run("Simple"));
         }
     }
 }
