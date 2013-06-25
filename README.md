@@ -57,11 +57,21 @@ default
     hello
 ```
 
-The predefined `do` task executes commands. If a command process returns a
-non-zero return value, the task will fail.
+The predefined `do` task executes operating system commands, launching processes.
+If a command process returns a non-zero return value, the task will fail.
 
-Note that the tasks can be nested, using spaces. No tab is allowed in
-configuration fiel.
+Note: the tasks can be nested, using spaces. No tab is allowed in
+configuration file.
+
+Note: the tasks have no explicit task dependencies. You simply write them
+as task at the beginning of the task.
+
+Note: line comments starts with `#`.
+
+## Inception
+
+Yes, I know. Nant and other tools exist. But I want to write a simple
+implementation, no XML file, no JSON, simple text with comments.
 
 ## Contribution
 
