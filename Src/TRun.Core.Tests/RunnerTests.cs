@@ -17,5 +17,14 @@
 
             Assert.IsTrue(runner.Run("Simple"));
         }
+
+        [TestMethod]
+        public void RunWithoutNamedTask()
+        {
+            SimpleTask task = new SimpleTask("Simple");
+            Runner runner = new Runner(new ITask[] { task });
+
+            Assert.IsFalse(runner.Run("Complex"));
+        }
     }
 }

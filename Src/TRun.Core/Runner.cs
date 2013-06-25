@@ -16,7 +16,12 @@
 
         public bool Run(string name)
         {
-            return this.tasks.First().Run();
+            var task = this.tasks.FirstOrDefault(t => t.Name == name);
+
+            if (task != null)
+                return task.Run();
+
+            return false;
         }
     }
 }
