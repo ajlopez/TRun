@@ -37,5 +37,16 @@
             Assert.IsTrue(runner.Run("Counter"));
             Assert.AreEqual(1, task.Counter);
         }
+
+        [TestMethod]
+        public void RunCounterTaskOnce()
+        {
+            CounterTask task = new CounterTask("Counter");
+            Runner runner = new Runner(new ITask[] { task });
+
+            Assert.IsTrue(runner.Run("Counter"));
+            Assert.IsTrue(runner.Run("Counter"));
+            Assert.AreEqual(1, task.Counter);
+        }
     }
 }
