@@ -9,6 +9,6 @@
     {
         string Name { get; }
 
-        bool Run();
+        bool Run(Context context);
     }
 }

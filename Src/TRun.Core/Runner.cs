@@ -26,7 +26,7 @@
 
             if (task != null)
             {
-                var result = task.Run();
+                var result = task.Run(null);
 
                 if (result)
                     rtasks.Add(task);

@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompositeTask.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="ITask.cs" />
+    <Compile Include="CallTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Runner.cs" />
     <Compile Include="SimpleTask.cs" />

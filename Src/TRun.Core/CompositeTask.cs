@@ -18,10 +18,10 @@
 
         public string Name { get { return this.name; } }
 
-        public bool Run()
+        public bool Run(Context context)
         {
             foreach (var task in this.tasks)
-                if (!task.Run())
+                if (!task.Run(context))
                     return false;
 
             return true;

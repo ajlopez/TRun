@@ -16,7 +16,7 @@
 
         public string Name { get { return this.name; } }
 
-        public bool Run()
+        public bool Run(Context context)
         {
             return true;
         }

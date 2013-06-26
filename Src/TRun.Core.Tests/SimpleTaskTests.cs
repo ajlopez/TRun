@@ -15,7 +15,7 @@
             SimpleTask task = new SimpleTask("Simple");
 
             Assert.AreEqual("Simple", task.Name);
-            Assert.IsTrue(task.Run());
+            Assert.IsTrue(task.Run(null));
         }
     }
 }

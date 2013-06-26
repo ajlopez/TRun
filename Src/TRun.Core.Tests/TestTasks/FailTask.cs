@@ -19,7 +19,7 @@
 
         public int Counter { get { return this.counter; } }
 
-        public bool Run()
+        public bool Run(Context context)
         {
             this.counter++;
             return false;

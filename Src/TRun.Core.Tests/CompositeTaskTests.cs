@@ -18,7 +18,7 @@
 
             CompositeTask task = new CompositeTask("Composite", new ITask[] { task1, task2 });
 
-            Assert.IsTrue(task.Run());
+            Assert.IsTrue(task.Run(null));
             Assert.AreEqual("Composite", task.Name);
             Assert.AreEqual(1, task1.Counter);
             Assert.AreEqual(1, task2.Counter);
@@ -29,7 +29,7 @@
         {
             CompositeTask task = new CompositeTask("Composite", new ITask[] { });
 
-            Assert.IsTrue(task.Run());
+            Assert.IsTrue(task.Run(null));
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@
 
             CompositeTask task = new CompositeTask("Composite", new ITask[] { task1, fail, task2 });
 
-            Assert.IsFalse(task.Run());
+            Assert.IsFalse(task.Run(null));
             Assert.AreEqual(1, task1.Counter);
             Assert.AreEqual(1, fail.Counter);
             Assert.AreEqual(0, task2.Counter);
