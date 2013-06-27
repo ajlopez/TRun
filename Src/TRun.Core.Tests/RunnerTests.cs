@@ -13,8 +13,8 @@
         [TestMethod]
         public void RunSimpleTaskWithName()
         {
-            SimpleTask task = new SimpleTask("Simple");
-            Runner runner = new Runner(new ITask[] { task });
+            Target target = new Target("Simple", new ITask[] { });
+            Runner runner = new Runner(new ITarget[] { target });
 
             Assert.IsTrue(runner.Run("Simple"));
         }
@@ -22,8 +22,8 @@
         [TestMethod]
         public void RunWithoutNamedTask()
         {
-            SimpleTask task = new SimpleTask("Simple");
-            Runner runner = new Runner(new ITask[] { task });
+            Target target = new Target("Simple", new ITask[] { });
+            Runner runner = new Runner(new ITarget[] { target });
 
             Assert.IsFalse(runner.Run("Complex"));
         }
@@ -31,8 +31,9 @@
         [TestMethod]
         public void RunCounterTask()
         {
-            CounterTask task = new CounterTask("Counter");
-            Runner runner = new Runner(new ITask[] { task });
+            CounterTask task = new CounterTask();
+            Target target = new Target("Counter", new ITask[] { task });
+            Runner runner = new Runner(new ITarget[] { target });
 
             Assert.IsTrue(runner.Run("Counter"));
             Assert.AreEqual(1, task.Counter);
@@ -41,8 +42,9 @@
         [TestMethod]
         public void RunCounterTaskOnce()
         {
-            CounterTask task = new CounterTask("Counter");
-            Runner runner = new Runner(new ITask[] { task });
+            CounterTask task = new CounterTask();
+            Target target = new Target("Counter", new ITask[] { task });
+            Runner runner = new Runner(new ITarget[] { target });
 
             Assert.IsTrue(runner.Run("Counter"));
             Assert.IsTrue(runner.Run("Counter"));

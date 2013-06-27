@@ -49,9 +49,9 @@
     <Compile Include="CallTaskTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunnerTests.cs" />
-    <Compile Include="SimpleTaskTests.cs" />
     <Compile Include="TestTasks\FailTask.cs" />
     <Compile Include="TestTasks\CounterTask.cs" />
+    <Compile Include="TestTasks\SimpleTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TRun.Core\TRun.Core.csproj">

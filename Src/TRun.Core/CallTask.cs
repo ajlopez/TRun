@@ -14,8 +14,6 @@
             this.taskname = taskname;
         }
 
-        public string Name { get { return null; } }
-
         public bool Run(Context context)
         {
             return context.Runner.Run(this.taskname);

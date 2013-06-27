@@ -7,16 +7,12 @@
 
     public class CompositeTask : ITask
     {
-        private string name;
         private IList<ITask> tasks;
 
-        public CompositeTask(string name, IEnumerable<ITask> tasks)
+        public CompositeTask(IEnumerable<ITask> tasks)
         {
-            this.name = name;
             this.tasks = new List<ITask>(tasks);
         }
-
-        public string Name { get { return this.name; } }
 
         public bool Run(Context context)
         {

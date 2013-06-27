@@ -1,4 +1,4 @@
-﻿namespace TRun.Core
+﻿namespace TRun.Core.Tests.TestTasks
 {
     using System;
     using System.Collections.Generic;
@@ -7,15 +7,6 @@
 
     public class SimpleTask : ITask
     {
-        private string name;
-
-        public SimpleTask(string name)
-        {
-            this.name = name;
-        }
-
-        public string Name { get { return this.name; } }
-
         public bool Run(Context context)
         {
             return true;

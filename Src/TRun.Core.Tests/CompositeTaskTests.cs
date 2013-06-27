@@ -13,13 +13,12 @@
         [TestMethod]
         public void RunTwoTasks()
         {
-            CounterTask task1 = new CounterTask(null);
-            CounterTask task2 = new CounterTask(null);
+            CounterTask task1 = new CounterTask();
+            CounterTask task2 = new CounterTask();
 
-            CompositeTask task = new CompositeTask("Composite", new ITask[] { task1, task2 });
+            CompositeTask task = new CompositeTask(new ITask[] { task1, task2 });
 
             Assert.IsTrue(task.Run(null));
-            Assert.AreEqual("Composite", task.Name);
             Assert.AreEqual(1, task1.Counter);
             Assert.AreEqual(1, task2.Counter);
         }
@@ -27,7 +26,7 @@
         [TestMethod]
         public void RunNoTasks()
         {
-            CompositeTask task = new CompositeTask("Composite", new ITask[] { });
+            CompositeTask task = new CompositeTask(new ITask[] { });
 
             Assert.IsTrue(task.Run(null));
         }
@@ -35,11 +34,11 @@
         [TestMethod]
         public void RunTwoTasksOfThree()
         {
-            CounterTask task1 = new CounterTask(null);
-            FailTask fail = new FailTask(null);
-            CounterTask task2 = new CounterTask(null);
+            CounterTask task1 = new CounterTask();
+            FailTask fail = new FailTask();
+            CounterTask task2 = new CounterTask();
 
-            CompositeTask task = new CompositeTask("Composite", new ITask[] { task1, fail, task2 });
+            CompositeTask task = new CompositeTask(new ITask[] { task1, fail, task2 });
 
             Assert.IsFalse(task.Run(null));
             Assert.AreEqual(1, task1.Counter);

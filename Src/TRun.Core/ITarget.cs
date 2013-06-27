@@ -5,8 +5,8 @@
     using System.Linq;
     using System.Text;
 
-    public interface ITask
+    public interface ITarget : ITask
     {
-        bool Run(Context context);
+        string Name { get; }
     }
 }

@@ -14,8 +14,9 @@
         public void RunTaskByName()
         {
             CallTask task = new CallTask("Counter");
-            CounterTask counter = new CounterTask("Counter");
-            Runner runner = new Runner(new ITask[] { counter });
+            CounterTask counter = new CounterTask();
+            Target target = new Target("Counter", new ITask[] { counter });
+            Runner runner = new Runner(new ITarget[] { target });
             Context context = new Context(runner);
 
             Assert.IsTrue(task.Run(context));

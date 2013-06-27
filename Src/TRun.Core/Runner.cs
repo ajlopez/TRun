@@ -7,29 +7,29 @@
 
     public class Runner
     {
-        private IList<ITask> tasks;
-        private IList<ITask> rtasks = new List<ITask>();
+        private IList<ITarget> targets;
+        private IList<ITarget> runnedtargets = new List<ITarget>();
 
-        public Runner(IEnumerable<ITask> tasks)
+        public Runner(IEnumerable<ITarget> targets)
         {
-            this.tasks = new List<ITask>(tasks);
+            this.targets = new List<ITarget>(targets);
         }
 
         public bool Run(string name)
         {
-            var rtask = this.rtasks.FirstOrDefault(t => t.Name == name);
+            var rtask = this.runnedtargets.FirstOrDefault(t => t.Name == name);
 
             if (rtask != null)
                 return true;
 
-            var task = this.tasks.FirstOrDefault(t => t.Name == name);
+            var task = this.targets.FirstOrDefault(t => t.Name == name);
 
             if (task != null)
             {
                 var result = task.Run(null);
 
                 if (result)
-                    rtasks.Add(task);
+                    runnedtargets.Add(task);
 
                 return result;
             }

@@ -7,15 +7,7 @@
 
     public class CounterTask : ITask
     {
-        private string name;
         private int counter;
-
-        public CounterTask(string name)
-        {
-            this.name = name;
-        }
-
-        public string Name { get { return this.name; } }
 
         public int Counter { get { return this.counter; } }
 
