@@ -8,12 +8,12 @@
     using TRun.Core.Tests.TestTasks;
 
     [TestClass]
-    public class CallTaskTests
+    public class CallTargetTaskTests
     {
         [TestMethod]
         public void RunTaskByName()
         {
-            CallTask task = new CallTask("Counter");
+            CallTargetTask task = new CallTargetTask("Counter");
             CounterTask counter = new CounterTask();
             Target target = new Target("Counter", new ITask[] { counter });
             Runner runner = new Runner(new ITarget[] { target });

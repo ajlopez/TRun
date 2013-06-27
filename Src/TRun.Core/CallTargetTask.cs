@@ -5,11 +5,11 @@
     using System.Linq;
     using System.Text;
 
-    public class CallTask : ITask
+    public class CallTargetTask : ITask
     {
         private string taskname;
 
-        public CallTask(string taskname)
+        public CallTargetTask(string taskname)
         {
             this.taskname = taskname;
         }
